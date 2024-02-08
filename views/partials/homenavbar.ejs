@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+        <img src="/img/fenix2.png" alt="">
+        GuiaPress
+    </a>
+
+     <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+        </li>
+   
+        <% categories.forEach(category => { %>
+            <li class="nav-item">
+                <a class="nav-link" href="/category/<%= category.slug %>"><%= category.title %></a>
+            </li>
+        <% }) %>
+           
+    </ul>        
+    
+</nav>

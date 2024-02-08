@@ -1,0 +1,39 @@
+<%- include ("../../partials/header") %>
+<%- include ("../../partials/navbar") %>
+    
+<div class="container">
+    <hr>
+    <h2>Categorias</h2>
+    <a class="btn btn-success" href="/admin/users/create">Criar novo Usuario</a>
+    <hr>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% users.forEach(user =>{ %>
+                <tr>
+                    <td><%= user.id %></td>
+                    <td><%= user.email %></td>
+                </tr>
+
+            <% }) %>
+        </tbody>
+
+    </table>
+</div>
+<%- include ("../../partials/footer") %>
+
+<script>
+    function confirmarDelecao(vent, form){
+        event.preventDefault();
+        console.log("O formulario nao foi enviado!");
+        let decision = confirm("Voce quer deletar esta categoria");
+        if(decision){
+            form.submit();
+        }
+    }
+</script>

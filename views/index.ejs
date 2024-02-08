@@ -1,0 +1,38 @@
+<%- include ("./partials/header") %>
+<%- include ("./partials/homenavbar") %>
+
+    <div class="container">
+        <br>
+        <div class="card">
+            <div class="jumbotron">
+                <h1 class="display-4">    Ola!</h1>
+                <p class="lead">  Aqui no nosso blog de programação, exploraremos juntos o fascinante mundo da tecnologia. Prepare-se para mergulhar em linhas de código cheias de criatividade e desafios emocionantes! </p>
+                <hr class="my-4">
+                <p>   Plataforma online dedicada a compartilhar conhecimentos, insights e informações relacionadas à arte da programação e desenvolvimento de software.</p>
+                <p class="lead">
+                  <!-- <a class="btn btn-darck btn-lg" href="#" role="button">Learn more</a> -->
+                </p>
+              </div>
+        </div>
+        <hr>
+        <% articles.forEach(articles => { %>
+          <div class="card">
+            <div class="card-header">
+                <h2><%= articles.title %></h2>
+            </div>
+            <div class="card-body">
+                <a href="/<%- articles.slug %>" class="btn btn-success">Ler Artigo</a>
+            </div>
+          </div> 
+          <br>
+        <% }); %>
+        <div class="row">
+          <div class="col col-12">
+            <a style="float:right" href="articles/page/2">>>Next</a>
+          </div>          
+        </div>
+    </div>
+
+<%- include ("./partials/footer") %>
+
+
